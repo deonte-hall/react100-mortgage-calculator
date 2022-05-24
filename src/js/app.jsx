@@ -5,7 +5,12 @@ export default class App extends React.Component {
   render() {
     return (
       <div className='container'>
-        {/* your JSX goes here */}
+        {
+          
+          <h1>Hello World</h1>
+      
+        
+        }
       </div>
     );
   }
