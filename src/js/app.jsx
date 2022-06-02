@@ -1,4 +1,5 @@
-import { values } from 'lodash';
+// import e from 'express';
+// import { values } from 'lodash';
 import React from 'react';
 
 export default class App extends React.Component {
@@ -11,14 +12,17 @@ export default class App extends React.Component {
       term: "15",
       output: " " 
     };
-
+    this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.calculate = this.calculate.bind(this);
   }
+
 
     handleChange(event) {
       this.setState({
-        balance : document.getElementById("")
-      });
-    }
+        [event.target.name]: event.target.value
+    });
+  }
 
     
 
@@ -30,6 +34,10 @@ export default class App extends React.Component {
       const p = this.state.balance;
       const r = (this.state.rate/100)/12;
       const n = this.state.term * 12;
+      const divide = r*((1+r)**n);
+      const divideBy = ((1+r)**n)-1;
+      const answer = p*(divide/divideBy);
+      return answer;
     }
     handleClick(){
       const result = this.calculate();
@@ -44,7 +52,6 @@ export default class App extends React.Component {
         <h3>My Mortgage Calculator</h3>
         <form className="form-horizontal">
           <div className="form-group">
-            {/* <label htmlFor="loanBalance" className="col-sm-2 control-label">Loan Balance ($USD)</label> */}
             <div className="col-sm-10\">
               <h3>Loan Balance:</h3>
             {/*input loan balance*/}
@@ -81,6 +88,7 @@ export default class App extends React.Component {
             <div className="submit">
             <button name="submit"
             onClick={(e) => {
+              e.preventDefault();
               this.handleClick(e);
             }}>Calculate</button>
             </div>
