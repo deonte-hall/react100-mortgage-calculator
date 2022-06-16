@@ -49,9 +49,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className='container'>
-        <h3>My Mortgage Calculator</h3>
-        <form className="form-horizontal">
-          <div className="form-group">
+        <h3 className='bg-primary'>My Mortgage Calculator</h3>
             <div className="col-sm-10\">
               <h3>Loan Balance:</h3>
             {/*input loan balance*/}
@@ -60,7 +58,7 @@ export default class App extends React.Component {
             name="balance" 
             id ="loanBalance" 
             placeholder="Enter Loan Balance"/>
-            </div>
+            
           </div>
           < div className="form-group">
            <h3>Interest Rate</h3>
@@ -95,7 +93,6 @@ export default class App extends React.Component {
           </div>
           <div name="output" 
           id="output">{this.state.output}</div>
-        </form>
       </div>
 
     );
