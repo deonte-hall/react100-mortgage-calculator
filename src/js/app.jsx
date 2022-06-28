@@ -1,3 +1,6 @@
+
+
+
 // import e from 'express';
 // import { values } from 'lodash';
 import React from 'react';
@@ -50,7 +53,7 @@ export default class App extends React.Component {
     return (
       <div className='container'>
         <h3 className='bg-primary'>My Mortgage Calculator</h3>
-            <div className="col-sm-10\">
+          
               <h3>Loan Balance:</h3>
             {/*input loan balance*/}
             <input onChange={this.handleChange} value={this.state.balance} 
@@ -59,8 +62,6 @@ export default class App extends React.Component {
             id ="loanBalance" 
             placeholder="Enter Loan Balance"/>
             
-          </div>
-          < div className="form-group">
            <h3>Interest Rate</h3>
             {/*input interest rate*/}
             <input onChange={this.handleChange} 
@@ -70,8 +71,7 @@ export default class App extends React.Component {
             step=".01" 
             id="interestRate" 
             placeholder="Enter APR"/>
-          </div>
-          <div className="form-group">   
+        
             <h3>Loan Term:</h3>             
                 {/*select loan term in years*/} 
                   <select onChange={this.handleChange} 
@@ -81,8 +81,7 @@ export default class App extends React.Component {
                     <option value="15">15</option>
                     <option value="30">30</option>
                   </select>
-          </div>
-          <div className="form-group">
+    
             <div className="submit">
             <button name="submit"
             onClick={(e) => {
@@ -90,7 +89,6 @@ export default class App extends React.Component {
               this.handleClick(e);
             }}>Calculate</button>
             </div>
-          </div>
           <div name="output" 
           id="output">{this.state.output}</div>
       </div>
@@ -98,3 +96,4 @@ export default class App extends React.Component {
     );
   }
 }
+
